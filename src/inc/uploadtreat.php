@@ -3,59 +3,63 @@
  * Created by PhpStorm.
  * User: alex
  * Date: 06/10/16
- * Time: 17:53
+ * Time: 18:58
  */
 
-include 'config.php';
+$maxsize=20000000;
+$maxwidth=50000;
+$maxheight=50000;
 
-function getConnect()
-{
-    $user = "root";
-    $pass = "Fradou!20?07";
-    $host = "localhost";
-    $db = "hack";
+if ($_FILES['socket_img']['error'] > 0) echo "Erreur lors du transfert"; /* $erreur = "Erreur lors du transfert"; */
 
-// Connecte à Mysql
+if ($_FILES['socket_img']['size'] > $maxsize) echo "Le fichier est trop grand";
+/* $erreur = "Le fichier est trop gros"; */
 
-    $conn = mysqli_connect($host, $user, $pass, $db);
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: ".mysqli_connect_error();
-        die();
-    }
-    return $conn;
-}
+/* Verification extension */
+$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 
-$name = $_POST["name"];
-$img_url = $_POST["img_url"];
+//1. strrchr renvoie l'extension avec le point (« . »).
 
-// Création requete sql
-$req = "INSERT INTO hackaton (name, img_path, vote, poll_nb) values ('$name', '$img_url', False, 0)";
+//2. substr(chaine,1) ignore le premier caractère de chaine.
 
-// Envoie requete sql
-$res = getConnect()->query($req) or die('Erreur SQL!'.$req.'<br>'.mysqlerror());
+//3. strtolower met l'extension en minuscules.
 
-// Retour utilisateur
+$extension_upload = strtolower(  substr(  strrchr($_FILES['socket_img']['name'], '.')  ,1)  );
+
+if ( in_array($extension_upload,$extensions_valides) ) echo "Extension correcte <br>";
+
+/* Verification taille en pixel */
+
+$image_sizes = getimagesize($_FILES['socket_img']['tmp_name']);
+if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight) /* $erreur = "Image trop grande";*/ echo "Image trop grande";
 
 
+/* Création du nom : alphanumerique unique*/
+
+$id_membre = md5(uniqid(rand(), true));
+
+/* Déplacement fichier temp dans emplacement definitif
+ */
+
+$img_url = "../../public/img/{$id_membre}.{$extension_upload}";
+
+echo $img_url."<br>";
+echo $_FILES['socket_img']['tmp_name']."<br>";
+
+$image = new Imagick($_FILES['socket_img']['tmp_name']);
+$image->adaptiveResizeImage(250,125);
+
+$resultat = move_uploaded_file($image,$img_url);
+echo $resultat;
+if ($resultat) {echo "Transfert réussi";} else {echo "Transfert fail";}
+
+include 'uploadsend.php';
 
 
-// Requete 2 : recup tableau actuel
-$req2 = "SELECT * FROM hackaton";
-
-// Envoi requete 2
-$res2 = getConnect()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'.mysqlerror());
-
-// Recuperation sous forme de row
-$row = mysqli_fetch_row($res2);
-print_r($row);
-while ($row = $res2 -> fetch_assoc()) {
-    echo $row['first_name'] . " " . $row['last_name'] . " " . $row['email'] . " " . $row['password'] . '<br>';
-};
-
-
-
-// Cloture connexion
-mysqli_close($conn);
-
-
-?>
+/*
+$_FILES['socket_img']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : socket_img.png).
+$_FILES['socket_img']['type']     //Le type du fichier. Par exemple, cela peut être « image/png ».
+$_FILES['socket_img']['size']     //La taille du fichier en octets.
+$_FILES['socket_img']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+$_FILES['socket_img']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+ */
