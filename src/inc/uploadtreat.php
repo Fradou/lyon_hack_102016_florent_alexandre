@@ -6,9 +6,9 @@
  * Time: 18:58
  */
 
-$maxsize=20000000;
-$maxwidth=50000;
-$maxheight=50000;
+$maxsize=2097152;
+$maxwidth=5000;
+$maxheight=5000;
 
 if ($_FILES['socket_img']['error'] > 0) echo "Erreur lors du transfert"; /* $erreur = "Erreur lors du transfert"; */
 
@@ -46,10 +46,7 @@ $img_url = "../../public/img/{$id_membre}.{$extension_upload}";
 echo $img_url."<br>";
 echo $_FILES['socket_img']['tmp_name']."<br>";
 
-$image = new Imagick($_FILES['socket_img']['tmp_name']);
-$image->adaptiveResizeImage(250,125);
-
-$resultat = move_uploaded_file($image,$img_url);
+$resultat = move_uploaded_file($_FILES['socket_img']['tmp_name'],$img_url);
 echo $resultat;
 if ($resultat) {echo "Transfert réussi";} else {echo "Transfert fail";}
 
