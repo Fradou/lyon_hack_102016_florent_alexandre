@@ -16,4 +16,11 @@
 
 <body>
 <header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <h1> Welcome to the Socket Championship ! <h1>
+      </div>
+    </div>
+  </div>
 </header>
