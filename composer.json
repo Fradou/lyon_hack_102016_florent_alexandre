@@ -1,0 +1,13 @@
+{
+    "name": "alex/hackaton",
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    },
+    "authors": [
+        {
+            "name": "Alexandre FRADET",
+            "email": "a_fradet@yahoo.fr"
+        }
+    ],
+    "require": {}
+}
