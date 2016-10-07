@@ -3,6 +3,15 @@
 
 header {
     height: 20vh;
+    text-align:center;
+}
+
+a {
+    font-size:2em;
+}
+
+h2 {
+    text-align:center;
 }
 
 .row img{
@@ -12,11 +21,16 @@ header {
     margin-left: 10%;
 }
 body{
-    background-color: #d58512;
+    background-color: #e0e0d1;
     opacity: 0.9;
 }
 .imgvote{
     margin-bottom: 5vh;
+}
+
+.imgvote {
+    text-align:center;
+    margin:auto;
 }
 
 table, th, td {
@@ -40,4 +54,23 @@ th, td {
 #nav2 {
     height:5vh;
     text-align:center;
+}
+
+.form-group {
+    margin-left:5%;
+    margin-bottom:2%;
+}
+
+.form-control {
+    width: 25%;
+}
+
+option {
+    width: 100%;
+}
+
+input {
+    margin-left:5%;
+    margin-bottom:2%;
+    margin-top:3%;
 }
