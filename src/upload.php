@@ -9,3 +9,4 @@
 $pageTitle = "Image Upload";
 include 'inc/header.php';
 ?>
+

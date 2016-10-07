@@ -40,7 +40,7 @@ $row = mysqli_fetch_row($res2);
 echo '<div class="container-fluid">';
 echo '<div class="row">';
 while ($row = $res2 -> fetch_assoc()) {
-    echo "<div class='imgvote col-xs-6 col-sm-4 col-lg-2'><img src='".$row['img_path']."'/></div>";
+    echo "<div class='imgvote col-xs-6 col-md-4 col-lg-2'><img src='".$row['img_path']."'/></div>";
 
 };
 echo "</div>";
