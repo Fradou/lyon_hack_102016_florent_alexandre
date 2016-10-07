@@ -10,7 +10,8 @@
 
 
 
-     <label for="socket_img">Fichier (tous formats | max. 20 Mo) :</label><br />
+
+     <label for="socket_img">Fichier (tous formats | max. 2 Mo) :</label><br />
 
      <input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
 

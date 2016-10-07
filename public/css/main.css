@@ -1,5 +1,6 @@
 /** Test **/
 
+
 header {
     height: 20vh;
 }
@@ -20,4 +21,27 @@ body{
 }
 .imgvote{
     margin-bottom: 5vh;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    width:100%;
+}
+
+th, td {
+    width:50%;
+}
+
+#nav1 {
+    height:10vh;
+    text-align: center;
+}
+
+#nav2 {
+    height:5vh;
+    text-align:center;
 }
