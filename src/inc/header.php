@@ -17,7 +17,7 @@
 <header>
   <div class="container-fluid">
     <div class="row" id="nav1">
-      <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
+      <div class="col-xs-offset-2 col-xs-8">
         <h1>Socks championship !</h1>
       </div>
     </div>
