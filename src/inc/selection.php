@@ -1,7 +1,7 @@
-<form method="post" action="formtreat.php">
+<form method="post" action="inc/formtreat.php">
 
     <div class="form-group">
-            <label for="Voteur">Mon nom :</label>
+            <label for="voteur">Mon nom :</label>
             <select name="voteur" class="form-control">
 
                 <?php
@@ -31,14 +31,13 @@
                 $row = mysqli_query($res3);
 
                 while ($row = $res3 -> fetch_assoc()) {
-                    echo '<option>'.$row['name']."</option>";
+                    echo '<option class="optionselect">'.$row['name']."</option>";
                 };
-
+/* On reporte la fermeture de connexion plus loin
                 // Cloture connexion
                 mysqli_close($conn);
-
+*/
                 ?>
             </select>
         <input type="hidden" name="votes" class="form-control"></select>
     </div>
-</form>
