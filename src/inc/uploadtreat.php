@@ -26,7 +26,7 @@ $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 
 $extension_upload = strtolower(  substr(  strrchr($_FILES['socket_img']['name'], '.')  ,1)  );
 
-if ( in_array($extension_upload,$extensions_valides) ) echo "Extension correcte <br>";
+if ( in_array($extension_upload,$extensions_valides) ) /*echo "Extension correcte <br>"; */
 
 /* Verification taille en pixel */
 
@@ -43,12 +43,14 @@ $id_membre = md5(uniqid(rand(), true));
 
 $img_url = "../../public/img/{$id_membre}.{$extension_upload}";
 
+/*
 echo $img_url."<br>";
 echo $_FILES['socket_img']['tmp_name']."<br>";
+*/
 
 $resultat = move_uploaded_file($_FILES['socket_img']['tmp_name'],$img_url);
 echo $resultat;
-if ($resultat) {echo "Transfert réussi";} else {echo "Transfert fail";}
+if (! $resultat) /*{echo "Transfert réussi";} else */{echo "Transfert fail";}
 
 include 'uploadsend.php';
 

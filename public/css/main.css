@@ -6,14 +6,10 @@ header {
 }
 
 .row img{
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     display:inline-block;
-    margin: auto;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    margin-left: 10%;
 }
 body{
     background-color: #d58512;
