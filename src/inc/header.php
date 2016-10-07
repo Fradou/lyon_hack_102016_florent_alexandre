@@ -8,7 +8,7 @@
   <?php
     include_once 'link.php';
   ?>
-<title><?php php echo $pageTitle; ?></title>
+<title><?php echo $pageTitle; ?></title>
 
 </head>
 

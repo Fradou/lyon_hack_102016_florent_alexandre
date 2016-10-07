@@ -9,7 +9,3 @@
 $pageTitle = "Image Upload";
 include 'inc/header.php';
 ?>
-
-<?php
-include 'inc/uploadform.php';
-?>

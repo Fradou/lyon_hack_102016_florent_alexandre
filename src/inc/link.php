@@ -19,5 +19,5 @@
 <!-- SmoothScroll script for index
 <script src="../../public/js/smoothscroll.js"></script>
 
-Fichier CSS custom -->
+
 <link rel="stylesheet" href="../../public/css/main.css"
