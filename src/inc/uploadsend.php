@@ -6,10 +6,12 @@
  * Time: 17:53
  */
 
+
 function getConnect()
 {
 // Include des logs de connexion
     include 'config.php';
+
 
 // Connecte à Mysql
 
@@ -51,5 +53,4 @@ while ($row = $res2 -> fetch_assoc()) {
 // Cloture connexion
 mysqli_close($conn);
 
-
-?>
+ ?>
