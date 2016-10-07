@@ -5,7 +5,7 @@
  * Date: 06/10/16
  * Time: 21:11
  */
-
+include "../inc/header.php";
 function getConnection()
 {
     $host       = "localhost";
@@ -37,17 +37,14 @@ $res2 = getConnection()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'); //.m
 
 // Recuperation sous forme de row
 $row = mysqli_fetch_row($res2);
-print_r($row);
+echo '<div class="container-fluid">';
 echo '<div class="row">';
 while ($row = $res2 -> fetch_assoc()) {
-    echo $row['name'] . "<img src='" . $row['img_path'] . "'/> " . $row['vote'] . " " . $row['poll_nb'] . '<br>';
-    echo '</div>' ;
+    echo "<div class='imgvote col-xs-6 col-sm-4 col-lg-2'><img src='".$row['img_path']."'/></div>";
+
 };
-
-
-
-
-
+echo "</div>";
+echo "</div>";
 
 // Cloture connexion
-mysqli_close($conn);
+

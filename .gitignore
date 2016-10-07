@@ -1,2 +1,3 @@
 /vendor
 /src/inc/config_distrib.php
+/src/class/vote.php

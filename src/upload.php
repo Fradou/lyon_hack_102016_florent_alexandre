@@ -11,5 +11,5 @@ include 'inc/header.php';
 ?>
 
 <?php
-include 'inc/uploadimg.php';
+include 'inc/uploadform.php';
 ?>

@@ -15,7 +15,7 @@ class vote
     private $_database    = 'hack';
     private $_dbUser      = 'root';
     private $_dbPwd       = '';
-    private $_con         = false;
+    private $_con        = false;
     private $_optionTable = 'options';
     private $_voterTable  = 'voters';
 
@@ -24,9 +24,9 @@ class vote
      */
     public function __construct()
     {
-        if(!$this->_con)
+        if(!$this->_connect)
         {
-            $this->_con = mysqli_connect($this->_host,$this->_dbUser,$this->_dbPwd);
+            $this->_connect = mysqli_connect($this->_host,$this->_dbUser,$this->_dbPwd);
             if(!$this->_con){
                 die('Could not connect: ' . mysqli_error);
             }
