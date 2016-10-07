@@ -28,7 +28,7 @@ $req2 = "SELECT * FROM hackaton ORDER BY poll_nb DESC";
 $res2 = getConnect()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'.mysqlerror());
 
 // Recuperation sous forme de row
-$row = mysqli_fetch_row($res2);
+$row = mysqli_query($res2);
 
 echo "<table><tr><th>Pseudo</th><th>Nombre de votes</th></tr>";
 
