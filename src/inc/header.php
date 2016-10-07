@@ -8,7 +8,7 @@
   <?php
     include_once 'link.php';
   ?>
-<title>Welcome to the Socket Championship ! </title>
+<title><?php php echo $pageTitle; ?></title>
 
 </head>
 
