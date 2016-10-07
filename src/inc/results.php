@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: alex
- * Date: 06/10/16
- * Time: 17:53
+ * User: root
+ * Date: 07/10/16
+ * Time: 01:25
  */
 
 function getConnect()
@@ -21,35 +21,22 @@ function getConnect()
     return $conn;
 }
 
-$name = $_POST["namecandid"];
-/* $img_url = $_POST["img_url"]; */
-
-// Création requete sql
-$req = "INSERT INTO hackaton (name, img_path, vote, poll_nb) values ('$name', '$img_url', False, 0)";
-
-// Envoie requete sql
-$res = getConnect()->query($req) or die('Erreur SQL!'.$req.'<br>'.mysqlerror());
-
-// Retour utilisateur
-
-
-
-
 // Requete 2 : recup tableau actuel
-$req2 = "SELECT * FROM hackaton";
+$req2 = "SELECT * FROM hackaton ORDER BY poll_nb DESC";
 
 // Envoi requete 2
 $res2 = getConnect()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'.mysqlerror());
 
 // Recuperation sous forme de row
-$row = mysqli_fetch_row($res2);
+$row = mysqli_query($res2);
+
+echo "<table><tr><th>Pseudo</th><th>Nombre de votes</th></tr>";
+
 while ($row = $res2 -> fetch_assoc()) {
-    echo $row['name'] . " " . $row['img_path'] . " " . $row['vote'] . " " . $row['poll_nb'] . '<br>';
+    echo "<tr><td>".$row['name']."</td><td>" . $row['poll_nb'] . "</td></tr>";
 };
 
+echo "</table>";
 
 // Cloture connexion
 mysqli_close($conn);
-
-
-?>
