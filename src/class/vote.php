@@ -8,7 +8,6 @@
 
 namespace hackaton;
 
-
 class vote
 {
     private $_host        = 'localhost';
