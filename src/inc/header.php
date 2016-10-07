@@ -26,7 +26,7 @@
             <a href="../src/upload.php">Je veux m'inscire</a>
         </div>
         <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-2">
-            <a href="../src/">Je veux voter</a>
+            <a href="../src/displayImage.php">Je veux voter</a>
         </div>
         <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-2">
             <a href="../src/backoffice.php">Back Office</a>
