@@ -5,13 +5,10 @@
  * Date: 06/10/16
  * Time: 21:11
  */
-include "../inc/header.php";
+include "inc/header.php";
 function getConnection()
 {
-    $host       = "localhost";
-    $user       = "root";
-    $password   = "jecode4laloupe";
-    $db         = "hack";
+    include 'inc/config.php';
 
     $mysqli = new mysqli($host, $user, $password, $db);
     if ($mysqli->connect_errno) {
