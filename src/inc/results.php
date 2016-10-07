@@ -29,10 +29,14 @@ $res2 = getConnect()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'.mysqlerro
 
 // Recuperation sous forme de row
 $row = mysqli_fetch_row($res2);
+
+echo "<table><tr><th>Pseudo</th><th>Nombre de votes</th></tr>";
+
 while ($row = $res2 -> fetch_assoc()) {
-    echo $row['name'] . " " . $row['poll_nb'] . '<br>';
+    echo "<tr><td>".$row['name']."</td><td>" . $row['poll_nb'] . "</td></tr>";
 };
 
+echo "</table>";
 
 // Cloture connexion
 mysqli_close($conn);

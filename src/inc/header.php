@@ -17,10 +17,21 @@
 <body>
 <header>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-offset-2 col-xs-8">
-        <h1> Welcome to the Socket Championship ! <h1>
+    <div class="row" id="nav1">
+      <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
+        <h1>Socks championship !</h1>
       </div>
+    </div>
+    <div class="row" id="nav2">
+        <div class="col-xs-offset-2 col-xs-10 col-md-offset-2 col-md-2">
+            <a href="../src/upload.php">Je veux m'inscire</a>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-2">
+            <a href="../src/">Je veux voter</a>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10 col-md-offset-1 col-md-2">
+            <a href="../src/backoffice.php">Back Office</a>
+        </div>
     </div>
   </div>
 </header>

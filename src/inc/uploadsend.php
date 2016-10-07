@@ -43,7 +43,6 @@ $res2 = getConnect()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'.mysqlerro
 
 // Recuperation sous forme de row
 $row = mysqli_fetch_row($res2);
-print_r($row);
 while ($row = $res2 -> fetch_assoc()) {
     echo $row['name'] . " " . $row['img_path'] . " " . $row['vote'] . " " . $row['poll_nb'] . '<br>';
 };
