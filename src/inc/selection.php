@@ -1,23 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 07/10/16
- * Time: 01:24
- */
-
-$pageTitle = "Back office";
-include 'inc/header.php';
-
-/** Tout ce bloc php est à supprimer une fois selection en include ailleurs */
-
-?>
-
-
 <form method="post" action="formtreat.php">
 
     <div class="form-group">
-            <label for="Secteur d'activité">Mon nom :</label>
+            <label for="Voteur">Mon nom :</label>
             <select name="voteur" class="form-control">
 
                 <?php
@@ -55,13 +39,6 @@ include 'inc/header.php';
 
                 ?>
             </select>
+        <input type="hidden" name="votes" class="form-control"></select>
     </div>
-
-
-        <?php
-
-        $req4 = "UPDATE hackaton SET vote = Yes where name = $nomvoteur";
-
-        $req5 = "UPDATE hackaton SET poll_nb++ where ";
-
-        ?>
+</form>

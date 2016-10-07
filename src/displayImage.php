@@ -6,6 +6,9 @@
  * Time: 21:11
  */
 include "inc/header.php";
+
+include "inc/selection.php";
+
 function getConnection()
 {
     include 'inc/config.php';
@@ -33,7 +36,7 @@ $req2 = "SELECT * FROM hackaton";
 $res2 = getConnection()->query($req2) or die('Erreur SQL 2!'.$req2.'<br>'); //.mysqlerror());
 
 // Recuperation sous forme de row
-$row = mysqli_fetch_row($res2);
+$row = mysqli_query($res2);
 echo '<div class="container-fluid">';
 echo '<div class="row">';
 while ($row = $res2 -> fetch_assoc()) {
